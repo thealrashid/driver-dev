@@ -1,4 +1,4 @@
-obj-m += my_char_module_3.o
+obj-m += my_char_module_4.o
 
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
