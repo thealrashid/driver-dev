@@ -112,7 +112,7 @@ static int __init my_char_module_init(void) {
 	return 0;
 	
 	r_sysfs:
-	sysfs_remove_file(kernel_kobj, &my_attr.attr);
+	sysfs_remove_file(kobj_ref, &my_attr.attr);
 	kobject_put(kobj_ref);
 
 	r_device:
@@ -124,7 +124,7 @@ static int __init my_char_module_init(void) {
 }
 
 static void __exit my_char_module_exit(void) {
-	sysfs_remove_file(kernel_kobj, &my_attr.attr);
+	sysfs_remove_file(kobj_ref, &my_attr.attr);
 	kobject_put(kobj_ref);
 	device_destroy(dev_class, dev);
 	class_destroy(dev_class);
